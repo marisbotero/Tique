@@ -21,9 +21,28 @@ def list_clients():
 def _add_comma():
     global clients
     clients += ','
+    
+    
+    
+def _print_welcome():
+    print('Welcome Tique')
+    print('*'*50)
+    print('what would you like to do today?')
+    print('[c]reate Client')
+    print('[D]elete Client')
+    print()
+    
+    
 
 if __name__ == '__main__':
-    list_clients()
-    create_client('david')
-    list_clients()
-   
+    _print_welcome()
+    
+    command = input()
+    if command == 'C':
+        client_name = input('What is the client name?')
+        create_client(client_name)
+        list_clients()
+    elif command == 'D':
+        pass
+    else:
+        print('Invalid Command')
