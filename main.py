@@ -8,7 +8,7 @@ Created on Tue Feb  5 21:44:01 2019
     
 clients = 'pablo,ricardo,'
 
-
+#metodo para la creación de cliente, se define la variable global de clientes para poder utilizar en diferentes metodos y funciones
 def create_client(client_name):
     global clients
     clients += client_name
@@ -28,7 +28,7 @@ def _print_welcome():
     print('Welcome Tique')
     print('*'*50)
     print('what would you like to do today?')
-    print('[c]reate Client')
+    print('[C]reate Client')
     print('[D]elete Client')
     print()
     
