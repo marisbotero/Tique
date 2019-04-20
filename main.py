@@ -7,7 +7,6 @@ Created on Tue Feb  5 21:44:01 2019
 
     
 
-
 clients = 'pablo,ricardo,'
 
 
@@ -83,6 +82,7 @@ def _print_welcome():
     print('[U]pdate client')
     print('[D]elete client')
     print('[S]earch client')
+    
 
 
 if __name__ == '__main__':
