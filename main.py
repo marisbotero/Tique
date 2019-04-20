@@ -6,6 +6,7 @@ Created on Tue Feb  5 21:44:01 2019
 """
 
     
+import sys
 
 clients = 'pablo,ricardo,'
 
