@@ -49,28 +49,26 @@ def list_clients():
 
 
 
-def update_client(client_name, updated_name):
+def update_client(client_id, updated_client):
     global clients
 
-    if client_name in clients:
-        index = clients.index(client_name)
-        clients[index] = updated_name       
+    if len(clients) - 1 >= client_id:
+        clients[client_id] = updated_client
     else:
         print('Client not in client\'s list')
 
 
-def delete_client(client_name):
+def delete_client(client_id):
     global clients
 
-    if client_name in clients:
-        clients.remove(client_name)
-    else:
-        print('Client not in client\'s list')
-
+    for idx, client in enumerate(clients):
+        if idx == client_id:
+            del clients[idx] 
+            break
 
 def search_client(client_name):
     for client in clients:
-        if client != client_name:
+        if client['name'] != client_name:
             continue
         else:
             return True
