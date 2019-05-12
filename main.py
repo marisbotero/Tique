@@ -7,23 +7,20 @@ Created on Tue Feb  5 21:44:01 2019
 
     
 import sys
+import csv
+
+CLIENT_TABLE = '.clients.csv'
+CLIENT_SCHEMA = ['name', 'company', 'email', 'position']
+clients = []
 
 
-clients = [
-    {
-        'name': 'Pablo',
-        'company': 'Google',
-        'email': 'pablo@google.com',
-        'position': 'Data Engineer',
-    },
-    {
-        'name': 'Juan',
-        'company': 'Facebook',
-        'email': 'juan@facebook.com',
-        'position': 'Data Scientist',
-    },
-]
 
+def _initialize_clients_from_storage():
+    with open(CLIENT_TABLE, mode = 'r') as f:
+        reader = csv.DictReader(f, fieldnames=CLIENT_SCHEMA)
+        for row in reader:
+            clients.append(row)
+            
 
 def create_client(client):
     global clients
