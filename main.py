@@ -25,11 +25,11 @@ clients = [
 ]
 
 
-def create_client(client_name):
+def create_client(client):
     global clients
 
     if client_name not in clients:
-        clients.append(client_name)
+        clients.append(client)
      
     else:
         print('Client already in client\'s list')
@@ -102,8 +102,13 @@ if __name__ == '__main__':
     command = command.upper()
 
     if command == 'C':
-        client_name = _get_client_name()
-        create_client(client_name)
+        client ={
+            'name'= get_client_field('name'),
+            'company' = get_client_field('company'),
+            'email' = get_client_field('email'),
+            'position' = get_client_field('position'),
+        }
+        create_client(client)
         list_clients()
     elif command == 'L':
         list_clients()
