@@ -53,11 +53,6 @@ def search_client(client_name):
             return True
 
 
-def _add_comma():
-    global clients
-
-    clients += ','
-
 def _get_client_name():
     client_name = None
 
