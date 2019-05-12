@@ -36,8 +36,17 @@ def create_client(client):
 
 
 def list_clients():
-    for idx,client in enumerate(clients):
-        print('{}:{}'.format(idx, client))
+    print('uid |  name  | company  | email  | position ')
+    print('*' * 50)
+
+    for idx, client in enumerate(clients):
+        print('{uid} | {name} | {company} | {email} | {position}'.format(
+            uid=idx, 
+            name=client['name'], 
+            company=client['company'], 
+            email=client['email'], 
+            position=client['position']))
+
 
 
 def update_client(client_name, updated_name):
@@ -66,6 +75,14 @@ def search_client(client_name):
         else:
             return True
 
+def _get_client_field(field_name, message='What is the client {}?'):
+    field = None
+
+    while not field:
+        field = input(message.format(field_name))
+
+    return field
+
 
 def _get_client_name():
     client_name = None
@@ -84,7 +101,7 @@ def _get_client_name():
 
 
 def _print_welcome():
-    print('WELCOME TO PLATZI VENTAS')
+    print('WELCOME')
     print('*' * 50)
     print('What would you like to do today?:')
     print('[C]reate client')
@@ -103,10 +120,10 @@ if __name__ == '__main__':
 
     if command == 'C':
         client ={
-            'name'= get_client_field('name'),
-            'company' = get_client_field('company'),
-            'email' = get_client_field('email'),
-            'position' = get_client_field('position'),
+        'name': _get_client_field('name'),
+        'company': _get_client_field('company'),
+        'email': _get_client_field('email'),
+        'position': _get_client_field('position'),
         }
         create_client(client)
         list_clients()
