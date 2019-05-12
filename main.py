@@ -17,11 +17,10 @@ clients = []
 
 
 def _initialize_clients_from_storage():
-	with open(CLIENT_TABLE,mode='r') as f:
-		reader = csv.DictReader(f,fieldnames=CLIENT_SCHEMA)
-
-		for row in reader:
-			clients.append(row)
+    with open(CLIENT_TABLE, mode = 'r') as f:
+        reader = csv.DictReader(f, fieldnames=CLIENT_SCHEMA)
+        for row in reader:
+            clients.append(row)
 
 def _save_clients_to_storage():
 	tmp_table_name = '{}.tmp'.format(CLIENT_TABLE)
