@@ -46,9 +46,7 @@ def delete_client(client_name):
 
 
 def search_client(client_name):
-    clients_list = clients.split(',')
-
-    for client in clients_list:
+    for client in clients:
         if client != client_name:
             continue
         else:
