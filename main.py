@@ -8,7 +8,21 @@ Created on Tue Feb  5 21:44:01 2019
     
 import sys
 
-clients =['pablo', 'maris']
+
+clients = [
+    {
+        'name': 'Pablo',
+        'company': 'Google',
+        'email': 'pablo@google.com',
+        'position': 'Data Engineer',
+    },
+    {
+        'name': 'Juan',
+        'company': 'Facebook',
+        'email': 'juan@facebook.com',
+        'position': 'Data Scientist',
+    },
+]
 
 
 def create_client(client_name):
