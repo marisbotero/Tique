@@ -28,11 +28,11 @@ clients = [
 def create_client(client):
     global clients
 
-    if client_name not in clients:
+    if client not in clients:
         clients.append(client)
-     
     else:
         print('Client already in client\'s list')
+    
 
 
 def list_clients():
